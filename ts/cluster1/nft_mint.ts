@@ -1,7 +1,6 @@
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createSignerFromKeypair, signerIdentity, generateSigner, percentAmount } from "@metaplex-foundation/umi"
 import { createNft, mplTokenMetadata } from "@metaplex-foundation/mpl-token-metadata";
-
 import wallet from "../wba-wallet.json"
 import base58 from "bs58";
 
@@ -22,7 +21,8 @@ const collectionUpdateAuthority = generateSigner(umi);
         mint: mint,
         authority: collectionUpdateAuthority,
         name: "Praash NFT using umi",
-        uri: "https://arweave.net/XZmUBoBkHFVclyFP8vegxL5JJPtaQe0iPaoGGuMHjv8",
+        symbol: "Henry",
+        uri: "https://arweave.net/mSGKyDNPSzo7m9tDUkvxsEuOkPwze43_6RSMoT7OxHQ",
         sellerFeeBasisPoints: percentAmount(9.99, 2), 
         isCollection: true,
     })

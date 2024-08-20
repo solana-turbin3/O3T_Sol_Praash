@@ -12,7 +12,7 @@ import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
 
 import { readFile } from "fs/promises";
 // Define our Mint address
-const mint = publicKey("")
+const mint = publicKey("H8LKPx5k3h7fwN4hDqAZxvxnQv4DvrGaLZnabnqfd1mA")
 
 // Create a UMI connection
 const umi = createUmi('https://api.devnet.solana.com', "confirmed");
@@ -25,7 +25,7 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
     try {
         // Start here
 
-        const image = await readFile("/home/praash/Desktop/solana-starter/ts/cluster1/myrug.png");
+        // const image = await readFile("/home/praash/Desktop/solana-starter/ts/cluster1/myrug.png");
 
         // const umiImageFile = createGenericFile(image, "my-rug.png", {
         //     tags: [{ name: "Content-Type", value: "image/png" }],
@@ -35,15 +35,16 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
         //     throw new Error(err);
         //   });
 
-        //   console.log("Your image URI: ", imageUri[0]);https://arweave.net/ApAWjvKFZ8Skv1QBFP67rbwp87GAvqhdzKyXV0bwkHQ
+        //   console.log("Your image URI: ", imageUri[0]);
+          // https://arweave.net/JUcLTlBz-WYwkG47fur_fEhPt69Kz6rluaKyYM1UC3Q
         
           const metadata = {
             name: "praash",
             symbol: "praash-spl_token",
             description: "This is a spl_token",
-            uri: "https://arweave.net/ApAWjvKFZ8Skv1QBFP67rbwp87GAvqhdzKyXV0bwkHQ",
+            uri: "https://arweave.net/JUcLTlBz-WYwkG47fur_fEhPt69Kz6rluaKyYM1UC3Q",
             creators: [{
-                address:"",
+                address:"dot dot dots",
             }]
          };
          
@@ -54,7 +55,7 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
         const Uri = await umi.uploader.upload([umiJSOnFile]).catch((err) => {
             throw new Error(err);
           });
-        console.log("Your image URI: ", Uri);
+        console.log("Your metadata URI: ", Uri);
 
 
         let accounts: CreateMetadataAccountV3InstructionAccounts = {

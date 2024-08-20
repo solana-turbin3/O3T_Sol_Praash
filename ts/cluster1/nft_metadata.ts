@@ -17,7 +17,7 @@ umi.use(signerIdentity(signer));
         // Follow this JSON structure
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
-        const image = "https://arweave.net/Ffac7XZlLiO5G6pBJH79_BV9LA0JZzvytq81VEKBaCI"
+        const image = "https://arweave.net/s_wfQhZSC7FJ1HpkQNAMsL2D-bL0s24pfIYL39PZVFc"
         const metadata = {
             name: "praash-nft",
             symbol: "praash-wba-nft",
