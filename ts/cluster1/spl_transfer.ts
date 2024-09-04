@@ -13,7 +13,7 @@ const connection = new Connection("https://api.devnet.solana.com", commitment);
 const mint = new PublicKey("H8LKPx5k3h7fwN4hDqAZxvxnQv4DvrGaLZnabnqfd1mA");
 
 // Recipient address
-const to = new PublicKey("BUysR8GsydeLKP9RAFsJ1DqnhwzgF4CUfqAFZdDcvFD4");
+const to = new PublicKey("9kQGWWmror3KP7nhe6hiYpWMjJn5GcAHDoRbPdXvKn6u");
 
 (async () => {
     try {
