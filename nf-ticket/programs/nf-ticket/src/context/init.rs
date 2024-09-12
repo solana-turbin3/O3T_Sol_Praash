@@ -5,7 +5,7 @@ pub use crate::state::*;
 
 #[derive(account)]
 #[instruction[name:String]]
-pub struct Initialize<'info>{
+pub struct Initialize<'info> {
     #[account(mut)]
     pub admin: Signer<'info>,
     #[account(
@@ -23,4 +23,15 @@ pub struct Initialize<'info>{
     pub fee_vault: SystemAccount<'info>,
     pub token_program: Program<'info, Token>,
     pub system_program: Program<'info, System>,
+}
+
+impl<'info> Initialize<'info> {
+    pub fn initialize(&mut self, name: String, fee: u16) -> Result<()> {
+        self.marketplace.set_inner(Marketplace {
+            adming: self.admin.kay(),
+            fee,
+            name,
+        });
+        Ok(())
+    }
 }
