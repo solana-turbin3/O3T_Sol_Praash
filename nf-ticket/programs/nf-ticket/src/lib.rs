@@ -23,4 +23,20 @@ pub mod nf_ticket {
     pub fn buy(ctx: Context<Buy>) -> Result<()> {
         ctx.accounts.buy(ctx.bumps)
     }
+
+    pub fn bid(ctx: Context<Bid>, amount: u64) -> Result<()> {
+        ctx.accounts.bid(amount)
+    }
+
+    pub fn accept_bid(ctx: Context<AcceptBid>) -> Result<()> {
+        ctx.accounts.accept_bid(ctx.bumps)
+    }
+
+    pub fn cancel_bid(ctx: Context<CancelBid>) -> Result<()> {
+        ctx.accounts.cancel_bid(ctx.bumps)
+    }
+
+    pub fn modify_bid(ctx: Context<ModifyBid>, amount: u64) -> Result<()> {
+        ctx.accounts.modify_bid(amount, ctx.bumps)
+    }
 }
