@@ -8,10 +8,19 @@ pub mod nf_ticket {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>, name:String, fee:u16) -> Result<()> {
-        // ctx.accounts.initialize(name, fee);
+        ctx.accounts.initialize(name, fee);
         Ok(())
     }
-}
 
-#[derive(Accounts)]
-pub struct Initialize {}
+    pub fn list(ctx: Context<List>, price: u64) -> Result<()> {
+        ctx.accounts.list(price, ctx.bumps)
+    }
+
+    pub fn delist(ctx: Context<Delist>) -> Result<()> {
+        ctx.accounts.delist(ctx.bumps)
+    }
+
+    pub fn buy(ctx: Context<Buy>) -> Result<()> {
+        ctx.accounts.buy(ctx.bumps)
+    }
+}
