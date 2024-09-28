@@ -16,7 +16,7 @@ const connection = new Connection("https://api.devnet.solana.com", commitment);
         // Start here
         const decimals = 6;
         const mint = await createMint(connection, keypair, keypair.publicKey, null, decimals);
-        console.log(mint.toBase58()); // H8LKPx5k3h7fwN4hDqAZxvxnQv4DvrGaLZnabnqfd1mA
+        console.log(mint.toBase58()); // E8QHaqTa1aiwswHcDj43gv1izPeNpHKGrwGJV1zGNBia
     } catch(error) {
         console.log(`Oops, something went wrong: ${error}`)
     }

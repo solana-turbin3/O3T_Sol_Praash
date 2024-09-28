@@ -12,7 +12,7 @@ import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
 
 import { readFile } from "fs/promises";
 // Define our Mint address
-const mint = publicKey("H8LKPx5k3h7fwN4hDqAZxvxnQv4DvrGaLZnabnqfd1mA")
+const mint = publicKey("E8QHaqTa1aiwswHcDj43gv1izPeNpHKGrwGJV1zGNBia")
 
 // Create a UMI connection
 const umi = createUmi('https://api.devnet.solana.com', "confirmed");
@@ -39,16 +39,18 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
           // https://arweave.net/JUcLTlBz-WYwkG47fur_fEhPt69Kz6rluaKyYM1UC3Q
         
           const metadata = {
-            name: "praash",
-            symbol: "praash-spl_token",
-            description: "This is a spl_token",
-            uri: "https://arweave.net/JUcLTlBz-WYwkG47fur_fEhPt69Kz6rluaKyYM1UC3Q",
-            creators: [{
-                address:"dot dot dots",
-            }]
+            name: 'Explore JAPAN',
+            symbol: 'EXJAP',
+            description: 'test token',
+            uri: 'https://github.com/user-attachments/assets/54855d6e-5383-45c9-bb39-60797c84c346',
+            creators: [
+              {
+                address: 'CeYv5PsCftUeXgTEq1A6HGYUENfzboB5uPCeRanfFH8u',
+              },
+            ],
          };
          
-        const umiJSOnFile = createGenericFile(JSON.stringify(metadata), "praash-mint-metadata", {
+        const umiJSOnFile = createGenericFile(JSON.stringify(metadata), "explore japan metadata", {
             tags: [{ name: "Content-Type", value: "JSON" }],
           });
 
@@ -63,8 +65,8 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
             mintAuthority: signer,
           };
           let data: DataV2Args = {
-            name: "harrypotter-coin",
-            symbol: "HPC",
+            name: "explore japan",
+            symbol: "EXJAP",
             uri: Uri[0],
             sellerFeeBasisPoints: 0,
             creators: null,
