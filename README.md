@@ -7,3 +7,4 @@
 5. AMM.
 6. NFT-Stake.
 7. NFT-MarketPlace (NFTickets).
+8. Capstone- NFTickets.
